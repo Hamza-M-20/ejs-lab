@@ -8,16 +8,12 @@
 <body>
     <%- include('./partials/nav') %>
   <h1>Full Menu</h1>
-</body>
-<p></p>
-</html>
-
-<h1>Menu</h1>
+  <h1>Menu</h1>
 
 <h2>Mains</h2>
 <ul>
   <% menu.forEach(item => { %>
-    <% if (item.category === 'Mains') { %>
+    <% if (item.category === 'mains') { %>
       <li>
         <strong><%= item.name %></strong> - $<%= item.price.toFixed(2) %><br>
         Rating: <%= item.rating %>/5<br>
@@ -30,7 +26,7 @@
 <h2>Desserts</h2>
 <ul>
   <% menu.forEach(item => { %>
-    <% if (item.category === 'Desserts') { %>
+    <% if (item.category === 'desserts') { %>
       <li>
         <strong><%= item.name %></strong> - $<%= item.price.toFixed(2) %><br>
         Rating: <%= item.rating %>/5<br>
@@ -43,7 +39,7 @@
 <h2>Sides</h2>
 <ul>
   <% menu.forEach(item => { %>
-    <% if (item.category === 'Sides') { %>
+    <% if (item.category === 'sides') { %>
       <li>
         <strong><%= item.name %></strong> - $<%= item.price.toFixed(2) %><br>
         Rating: <%= item.rating %>/5<br>
@@ -51,5 +47,16 @@
       </li>
     <% } %>
   <% }) %>
+  <% RESTAURANT.menu.forEach(item => { %>
+    <li>
+      <%= item.name %><%= item.rating === 5 ? ' ⭐' : '' %> - $<%= item.price.toFixed(2) %>
+    </li>
+  <% }) %>
 </ul>
+</body>
+</html>
+  
 
+
+
+      
