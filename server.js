@@ -1,6 +1,9 @@
 const express = require('express');
 const app = express();
 
+app.set('view engine', 'ejs');
+app.set('views', './views');
+
 const RESTAURANT = {
     name: 'The Green Byte Bistro',
     isOpen: true,
@@ -74,6 +77,10 @@ app.get('/menu', (req, res) => {
           categoryParam.charAt(0).toUpperCase() + categoryParam.slice(1);
       
         res.render("category", { menuItems, categoryName });
+      });
+      app.get('/Desserts', (req, res) => {
+        res.render('desserts', {menu:
+            RESTAURANT.menu});
       });
        
 app.listen(3000);
